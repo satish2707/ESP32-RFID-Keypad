@@ -1,4 +1,4 @@
-# ESP32 RFID Keypad
+# ESP32 RFID System
 
 ESP32-based RFID user access and recharge system using an MFRC522 RFID reader, 0.96 inch SSD1306 OLED display, four-button keypad, EEPROM storage, buzzer, and status output.
 
@@ -6,7 +6,7 @@ ESP32-based RFID user access and recharge system using an MFRC522 RFID reader, 0
 
 Open the Arduino sketch:
 
-`ESP32_RFID_Keypad/ESP32_RFID_Keypad.ino`
+`ESP32_RFID_System/ESP32_RFID_System.ino`
 
 ## Features
 
@@ -24,7 +24,7 @@ Open the Arduino sketch:
 
 Full wiring, library, and workflow details are in:
 
-`ESP32_RFID_Keypad/README.md`
+`ESP32_RFID_System/README.md`
 
 ## Author
 

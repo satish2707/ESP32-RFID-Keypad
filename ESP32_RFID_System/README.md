@@ -1,4 +1,4 @@
-# ESP32 RFID Keypad
+# ESP32 RFID System
 
 This project is an ESP32 RFID user access and recharge system built with an MFRC522 RFID reader, 0.96 inch SSD1306 OLED display, four-button keypad, EEPROM user storage, buzzer alert, and status output.
 
@@ -31,6 +31,36 @@ The main system flow is preserved:
 | Buzzer | Alert Output | GPIO 13 |
 | Status Output | LED / Load Output | GPIO 2 |
 
+## Connection Diagram
+
+```mermaid
+flowchart LR
+  ESP32["ESP32 Dev Board"]
+  RFID["MFRC522 RFID Reader"]
+  OLED["0.96 inch SSD1306 OLED"]
+  KEYS["4 Button Keypad"]
+  BUZZER["Buzzer"]
+  OUT["Status LED / Output"]
+
+  ESP32 -- "GPIO 27: SS/SDA" --> RFID
+  ESP32 -- "GPIO 14: RST" --> RFID
+  ESP32 -- "GPIO 19: MISO" --> RFID
+  ESP32 -- "GPIO 23: MOSI" --> RFID
+  ESP32 -- "GPIO 18: SCK" --> RFID
+  ESP32 -- "3.3V + GND" --> RFID
+
+  ESP32 -- "GPIO 21: SDA" --> OLED
+  ESP32 -- "GPIO 22: SCL" --> OLED
+  ESP32 -- "3.3V + GND" --> OLED
+
+  KEYS -- "Button 1: GPIO 26" --> ESP32
+  KEYS -- "Button 2: GPIO 32" --> ESP32
+  KEYS -- "Button 3: GPIO 25" --> ESP32
+  KEYS -- "Button 4: GPIO 33" --> ESP32
+
+  ESP32 -- "GPIO 13" --> BUZZER
+  ESP32 -- "GPIO 2" --> OUT
+```
 ## Required Libraries
 
 Install these Arduino libraries:
@@ -70,7 +100,7 @@ Menu options:
 
 ## How To Use
 
-1. Open `ESP32_RFID_Keypad.ino` in Arduino IDE.
+1. Open `ESP32_RFID_System.ino` in Arduino IDE.
 2. Select the correct ESP32 board and COM port.
 3. Install the required libraries.
 4. Update `AdminCardStr` in `RFID.h` with your admin RFID card UID.

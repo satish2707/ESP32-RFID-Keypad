@@ -194,7 +194,7 @@ void DISPLAY_LOGO() {
 // Print the initial Serial Print on Serial
 void FM_START_PRINT() {
   Serial.println("|---------------------------------------------------------------|");
-  Serial.println("|--------------------- ESP32 RFID KEYPAD -----------------------|");
+  Serial.println("|--------------------- ESP32 RFID SYSTEM -----------------------|");
   Serial.println("|---------------------------------------------------------------|");
   Serial.println("");
 }

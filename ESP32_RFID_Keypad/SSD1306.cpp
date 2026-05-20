@@ -3,7 +3,7 @@
  *
  * @author   : Satish Kanawade (Embedded Software developer)
  *
- * @copyright: Omnitrix Technologies PVT LTD
+ * @copyright : Satish Kanawade. All rights reserved.
  *
  * @date     : 23 OCT 2024
  *
@@ -184,7 +184,7 @@ void ERROR_GIF() {
   display.clearDisplay();
 }
 
-// This Function Display the logo of Company
+// This Function Display the startup logo
 void DISPLAY_LOGO() {
   display.clearDisplay();
   display.drawBitmap(0, 0, Company_logo, LOGO_Height, LOGO_Width, WHITE);
@@ -194,7 +194,7 @@ void DISPLAY_LOGO() {
 // Print the initial Serial Print on Serial
 void FM_START_PRINT() {
   Serial.println("|---------------------------------------------------------------|");
-  Serial.println("|------------------------- RFID PID ----------------------------|");
+  Serial.println("|--------------------- ESP32 RFID KEYPAD -----------------------|");
   Serial.println("|---------------------------------------------------------------|");
   Serial.println("");
 }

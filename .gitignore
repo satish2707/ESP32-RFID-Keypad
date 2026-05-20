@@ -1,0 +1,19 @@
+# Arduino and embedded build output
+build/
+*.bin
+*.elf
+*.hex
+*.map
+*.o
+*.d
+
+# Local IDE files
+.vscode/
+.idea/
+*.log
+
+# OS generated files
+Thumbs.db
+desktop.ini
+.DS_Store
+

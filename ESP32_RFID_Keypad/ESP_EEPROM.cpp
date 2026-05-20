@@ -3,7 +3,7 @@
  *
  * @author   : Satish Kanawade (Embedded Software developer)
  *
- * @copyright: Omnitrix Technologies PVT LTD
+ * @copyright : Satish Kanawade. All rights reserved.
  *
  * @date     : 23 OCT 2024
  *

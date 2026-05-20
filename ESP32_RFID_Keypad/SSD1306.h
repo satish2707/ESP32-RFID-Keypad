@@ -3,7 +3,7 @@
  *
  * @author   : Satish Kanawade (Embedded Software developer)
  *
- * @copyright: Omnitrix Technologies PVT LTD
+ * @copyright : Satish Kanawade. All rights reserved.
  *
  * @date     : 23 OCT 2024
  *
@@ -130,7 +130,7 @@ void COMPLETE_GIF();
 
 void DISPLAY_LOGO();
 /**
- * @details: This Function Display the logo of Company
+ * @details: This Function Display the startup logo
  * @param  : None
  * @returns: None
  */

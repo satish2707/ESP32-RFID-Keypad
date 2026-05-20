@@ -3,7 +3,7 @@
  *
  * @author   : Satish Kanawade (Embedded Software developer)
  *
- * @copyright: Omnitrix Technologies PVT LTD
+ * @copyright : Satish Kanawade. All rights reserved.
  *
  * @date     : 23 OCT 2024
  *
@@ -60,6 +60,8 @@ bool compareUIDs(const char* uid1, const char* uid2) {
 
 // This function scans the RFID card and returns the UID dynamically
 char* SCAN_RFID() {
+  static char uidBuffer[RFID_UID_BUFFER_SIZE];
+
   // Check if there's a new card present
   if (!rfid.PICC_IsNewCardPresent()) {
     return nullptr;
@@ -70,25 +72,23 @@ char* SCAN_RFID() {
     return nullptr;
   }
 
-  char* uidString = (char*)malloc(rfid.uid.size * 3 + 1);  
-
-  if (uidString == nullptr) {
-    Serial.println("Memory allocation failed!");
+  if ((rfid.uid.size * 3) >= RFID_UID_BUFFER_SIZE) {
+    Serial.println("RFID UID buffer size is not enough.");
     return nullptr;
   }
 
   int index = 0;
   for (byte i = 0; i < rfid.uid.size; i++) {
-    sprintf(&uidString[index], "%02X ", rfid.uid.uidByte[i]);
-    index += 3; 
+    sprintf(&uidBuffer[index], "%02X ", rfid.uid.uidByte[i]);
+    index += 3;
   }
 
-  uidString[index - 1] = '\0';
+  uidBuffer[index - 1] = '\0';
 
   rfid.PICC_HaltA();
   rfid.PCD_StopCrypto1();
 
   BUZZER_ALERT(1);
 
-  return uidString;
+  return uidBuffer;
 }

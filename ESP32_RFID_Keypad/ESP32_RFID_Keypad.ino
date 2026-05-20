@@ -3,7 +3,7 @@
  *
  * @author   : Satish Kanawade (Embedded Software developer)
  *
- * @copyright: Omnitrix Technologies PVT LTD
+ * @copyright : Satish Kanawade. All rights reserved.
  *
  * @date     : 23 OCT 2024
  *
@@ -22,6 +22,7 @@ extern Adafruit_SSD1306 display;
 extern char uidString[12];
 char* RFID_UID;
 
+// Initializes serial, GPIO, OLED, EEPROM, RFID, and startup display.
 void setup() {
   Serial.begin(115200);
   delay(10);
@@ -45,6 +46,7 @@ void setup() {
   delay(1000);
 }
 
+// Runs RFID scan, admin setup, user recharge, and timed output workflows.
 void loop() {
   static bool adminMode = false;
   static unsigned long lastScanTime = 0;

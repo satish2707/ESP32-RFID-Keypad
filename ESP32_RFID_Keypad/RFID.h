@@ -3,7 +3,7 @@
  *
  * @author  : Satish Kanawade (Embedded Software developer)
  *
- * @copyright: Omnitrix Technologies PVT LTD
+ * @copyright : Satish Kanawade. All rights reserved.
  *
  * @date    : 23 OCT 2024
  *
@@ -12,8 +12,9 @@
 #ifndef _RFID_H_
 #define _RFID_H_
 
-#define SS_PIN  27 
+#define SS_PIN  27
 #define RST_PIN 14
+#define RFID_UID_BUFFER_SIZE 32
 
 const char AdminCardStr[] = "63 02 B1 E2";
 
